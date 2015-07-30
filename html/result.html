@@ -1,0 +1,59 @@
+ {% load staticfiles %}
+ <!DOCTYPE html>
+<html>
+<head>
+  
+  <<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <title>Search Engine App</title>
+
+
+
+</head>
+
+<body style="background-color:#dbdbdb;">
+<p style="color:#000; text-align:center; font-size: 1.2em;">The result returns: </p>
+<br> <br>
+<table border="1" style="width:70%;border:none;" align="center">
+   <tr style="background: #2980b9; border:none;">
+    <th style="color:#fff; padding:0.5em;">First Name</th>
+    <th style="color:#fff;  padding:0.5em;">Last Name</th>
+    <th style="color:#fff;  padding:0.5em;">Gpa</th>
+  </tr>
+  
+{% for r in res %}
+  <tr style="background:#fff; padding:0.5em;">
+    <td style="padding:0.5em; text-align:center; ">{{ r.firstname }}</td>
+    <td style="padding:0.5em; text-align:center;">{{ r.lastname }}</td>		
+    <td  style="padding:0.5em; text-align:center;">{{ r.gpa }}</td>
+    <td style="padding:0.5em; text-align:center; position:relative;"> <div id="showbttn" style="background:#e74c3c; color:#fff; width: 6em; padding: 0.1em; display:block; margin: 0 auto; cursor:pointer;"> Details..</div>
+   
+    <div id="detailstab" style="display:none; margin: 2em auto; background: #fff; width:50%; padding: 2em; position: absolute; z-index:1000; left: 15%;">
+    First Name:{{ r.firstname }} <br>
+    Last Name: {{ r.lastname }}  <br>
+    GPA: {{ r.gpa }} <br>
+
+    {% for a in r.marks.items %}
+    	
+    		Subject - {{ a.0 }}  Grade achieved-{{ a.1 }} <br>
+
+    		<h4 id="closebttn" style="cursor:pointer;">Close</h4>
+    	</div>
+    	
+  	{% endfor %}</td>
+  </tr>
+  {% endfor %} 
+</table>
+ <script type="text/javascript">
+    $('#showbttn').click(function(){
+    	$('#detailstab').fadeIn();
+    });
+    $('#closebttn').click(function(){
+    	$('#detailstab').hide();
+    });
+    </script>
+
+</body>
+
+</html> 
+
+

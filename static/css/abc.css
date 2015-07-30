@@ -1,0 +1,24 @@
+.container {width: 960px; margin: 0 auto; overflow: hidden;}
+
+#content {	float: left; width: 100%;}
+
+.post { margin-top:260px; padding-bottom: 50px; float: left; width: 960px; }
+
+.btn-sign {
+	width:460px;
+	margin-top:30px;
+	margin-bottom:20px;
+	margin:0 auto;
+	padding:20px;
+	border-radius:5px;
+	background: -moz-linear-gradient(center top, #00c6ff, #018eb6);
+    background: -webkit-gradient(linear, left top, left bottom, from(#00c6ff), to(#018eb6));
+	background:  -o-linear-gradient(top, #00c6ff, #018eb6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#00c6ff', EndColorStr='#018eb6');
+	text-align:center;
+	font-size:36px;
+	color:#fff;
+	text-transform:uppercase;
+}
+
+.btn-sign a { color:#fff; text-shadow:0 1px 2px #161616; text-transform:lowercase;}
